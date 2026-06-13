@@ -31,6 +31,19 @@ const CLAIM_TYPES = {
   item_damaged: 'Item Arrived Damaged',
 }
 
+function FistIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} xmlns="http://www.w3.org/2000/svg">
+      <rect x="4.5" y="2" width="3" height="7" rx="1.5" />
+      <rect x="8.5" y="1" width="3" height="8" rx="1.5" />
+      <rect x="12.5" y="1.5" width="3" height="7.5" rx="1.5" />
+      <rect x="16.5" y="3" width="2.5" height="6" rx="1.25" />
+      <rect x="4" y="8" width="15" height="12" rx="2" />
+      <rect x="1" y="10" width="4.5" height="7" rx="1.5" />
+    </svg>
+  )
+}
+
 const PROCESSING_STEPS = [
   'Verifying payment...',
   'Analyzing your claim details...',
@@ -137,7 +150,7 @@ function PaymentFormInner({ email, clientSecret, form, onSuccess }: PaymentFormP
           <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Order summary</h2>
           <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
             <div className="flex items-start gap-4 mb-6 pb-6 border-b border-gray-100">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">✊</div>
+              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0"><FistIcon className="w-6 h-6 text-[#DC143C]" /></div>
               <div>
                 <div className="font-semibold text-gray-900 text-sm">Fight A Claim</div>
                 <div className="text-xs text-gray-500 mt-0.5">{platformLabel} · {claimLabel}</div>
@@ -266,11 +279,11 @@ export default function Home() {
         <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#DC143C] rounded-lg flex items-center justify-center text-xl">✊</div>
+              <div className="w-8 h-8 bg-[#DC143C] rounded-lg flex items-center justify-center"><FistIcon className="w-4 h-4 text-white" /></div>
               <span className="font-bold text-gray-900 text-lg">Fight A Claim</span>
             </div>
             <button onClick={() => setStep('form')} className="bg-[#DC143C] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#b01030] transition-colors">
-              Fight a Claim →
+              Fight a Claim
             </button>
           </div>
         </header>
@@ -380,7 +393,7 @@ export default function Home() {
             <button onClick={() => setStep('landing')} className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
               <span>←</span>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-[#DC143C] rounded flex items-center justify-center text-base">✊</div>
+                <div className="w-6 h-6 bg-[#DC143C] rounded flex items-center justify-center"><FistIcon className="w-3.5 h-3.5 text-white" /></div>
                 <span className="font-semibold">Fight A Claim</span>
               </div>
             </button>
@@ -496,7 +509,7 @@ export default function Home() {
               onClick={() => setStep('payment')}
               className="w-full bg-[#DC143C] hover:bg-[#b01030] text-white font-bold py-4 rounded-xl text-lg shadow-lg shadow-red-200 transition-all hover:shadow-xl"
             >
-              Continue to Payment $19 →
+              Continue to Payment $19
             </button>
             <p className="text-center text-xs text-gray-400">Secure payment via Stripe · Documents ready in ~90 seconds</p>
           </div>
@@ -514,7 +527,7 @@ export default function Home() {
             <button onClick={() => setStep('form')} className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
               <span>←</span>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-[#DC143C] rounded flex items-center justify-center text-base">✊</div>
+                <div className="w-6 h-6 bg-[#DC143C] rounded flex items-center justify-center"><FistIcon className="w-3.5 h-3.5 text-white" /></div>
                 <span className="font-semibold">Fight A Claim</span>
               </div>
             </button>
@@ -559,7 +572,7 @@ export default function Home() {
         <div className="max-w-md w-full mx-auto px-6 text-center">
           <div className="bg-white rounded-2xl border border-gray-200 p-10 shadow-sm">
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-              <div className="w-8 h-8 bg-[#DC143C] rounded-lg flex items-center justify-center text-white text-xl">✊</div>
+              <div className="w-8 h-8 bg-[#DC143C] rounded-lg flex items-center justify-center"><FistIcon className="w-4 h-4 text-white" /></div>
             </div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Generating your documents</h2>
             <p className="text-gray-500 text-sm mb-8">Analyzing platform policies and drafting your response...</p>
