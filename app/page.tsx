@@ -111,7 +111,7 @@ function PaymentFormInner({ email, clientSecret, form, onSuccess }: PaymentFormP
             <button
               onClick={handlePay}
               disabled={loading || !stripe}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-bold py-4 rounded-xl text-lg shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-3"
+              className="w-full bg-[#DC143C] hover:bg-[#b01030] disabled:bg-[#f08090] text-white font-bold py-4 rounded-xl text-lg shadow-lg shadow-red-200 transition-all flex items-center justify-center gap-3"
             >
               {loading ? (
                 <>
@@ -137,9 +137,9 @@ function PaymentFormInner({ email, clientSecret, form, onSuccess }: PaymentFormP
           <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Order summary</h2>
           <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
             <div className="flex items-start gap-4 mb-6 pb-6 border-b border-gray-100">
-              <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 font-bold text-sm flex-shrink-0">FA</div>
+              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">✊</div>
               <div>
-                <div className="font-semibold text-gray-900 text-sm">FightAClaim</div>
+                <div className="font-semibold text-gray-900 text-sm">Fight A Claim</div>
                 <div className="text-xs text-gray-500 mt-0.5">{platformLabel} · {claimLabel}</div>
                 {form.itemName && <div className="text-xs text-gray-400 mt-0.5 truncate max-w-[160px]">{form.itemName}</div>}
               </div>
@@ -266,10 +266,10 @@ export default function Home() {
         <header className="border-b border-gray-200 bg-white sticky top-0 z-10">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">FA</div>
-              <span className="font-bold text-gray-900 text-lg">FightAClaim</span>
+              <div className="w-8 h-8 bg-[#DC143C] rounded-lg flex items-center justify-center text-xl">✊</div>
+              <span className="font-bold text-gray-900 text-lg">Fight A Claim</span>
             </div>
-            <button onClick={() => setStep('form')} className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors">
+            <button onClick={() => setStep('form')} className="bg-[#DC143C] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#b01030] transition-colors">
               Fight a Claim →
             </button>
           </div>
@@ -282,19 +282,19 @@ export default function Home() {
           </div>
           <h1 className="text-5xl font-extrabold text-gray-900 leading-tight mb-6">
             Stop losing money to<br />
-            <span className="text-indigo-600">fraudulent buyer claims.</span>
+            <span className="text-[#DC143C]">fraudulent buyer claims.</span>
           </h1>
           <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-            Get a professionally written dispute response for Amazon, eBay, or Etsy in 2 minutes — the kind platforms actually accept.
+            Get a professionally written dispute response for Amazon, eBay, or Etsy in 2 minutes -- the kind platforms actually accept.
           </p>
           <p className="text-base text-gray-500 mb-10 max-w-xl mx-auto">
             Every wrongly-conceded claim counts against your Order Defect Rate. Even a $30 dispute is worth fighting when your account health is on the line.
           </p>
           <button
             onClick={() => setStep('form')}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg shadow-indigo-200 transition-all hover:shadow-xl hover:scale-105 active:scale-100"
+            className="bg-[#DC143C] hover:bg-[#b01030] text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg shadow-red-200 transition-all hover:shadow-xl hover:scale-105 active:scale-100"
           >
-            Generate My Response — $19
+            Generate My Response for $19
           </button>
           <p className="text-sm text-gray-400 mt-3">Instant delivery · No subscription · Works on all 3 platforms</p>
         </section>
@@ -317,8 +317,8 @@ export default function Home() {
               {[
                 { title: 'Platform-optimized dispute letter', desc: 'Written in the exact language Amazon/eBay/Etsy reviewers look for. Structured for how each platform actually evaluates claims.' },
                 { title: 'Evidence submission checklist', desc: 'Exactly what to attach, in what order, with platform-specific instructions. Submitting the right evidence is half the battle.' },
-                { title: 'Account health protection language', desc: 'Your response creates a formal record you contested this claim. Critical if Amazon denies the first appeal — this is your escalation foundation.' },
-                { title: 'Personalized to your situation', desc: 'Your order ID, tracking number, and claim details are woven into the response. Not a fill-in-the-blank form — a real dispute letter.' },
+                { title: 'Account health protection language', desc: 'Your response creates a formal record you contested this claim. Critical if Amazon denies the first appeal -- this is your escalation foundation.' },
+                { title: 'Personalized to your situation', desc: 'Your order ID, tracking number, and claim details are woven into the response. Not a fill-in-the-blank form -- a real dispute letter.' },
               ].map((item) => (
                 <div key={item.title} className="bg-white border border-gray-200 rounded-xl p-6">
                   <div className="flex items-start gap-3">
@@ -345,7 +345,7 @@ export default function Home() {
                 { stat: '3', label: 'Platforms supported' },
               ].map((s) => (
                 <div key={s.stat}>
-                  <div className="text-3xl font-bold text-indigo-600">{s.stat}</div>
+                  <div className="text-3xl font-bold text-[#DC143C]">{s.stat}</div>
                   <div className="text-sm text-gray-500 mt-1">{s.label}</div>
                 </div>
               ))}
@@ -353,17 +353,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-indigo-600 py-16 text-center text-white">
+        <section className="bg-[#DC143C] py-16 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Ready to fight back?</h2>
-          <p className="text-indigo-200 mb-8 text-lg">It takes 2 minutes. Your documents are ready before the page reloads.</p>
-          <button onClick={() => setStep('form')} className="bg-white text-indigo-600 font-bold text-lg px-10 py-4 rounded-xl hover:bg-indigo-50 transition-colors shadow-lg">
-            Generate My Response — $19
+          <p className="text-red-200 mb-8 text-lg">It takes 2 minutes. Your documents are ready before the page reloads.</p>
+          <button onClick={() => setStep('form')} className="bg-white text-[#DC143C] font-bold text-lg px-10 py-4 rounded-xl hover:bg-red-50 transition-colors shadow-lg">
+            Generate My Response for $19
           </button>
         </section>
 
         <footer className="border-t border-gray-200 bg-white py-8">
           <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-            <span>© {new Date().getFullYear()} FightAClaim · All rights reserved</span>
+            <span>© {new Date().getFullYear()} Fight A Claim · All rights reserved</span>
             <a href="mailto:support@fightaclaim.com" className="hover:text-gray-600 transition-colors">support@fightaclaim.com</a>
           </div>
         </footer>
@@ -380,11 +380,11 @@ export default function Home() {
             <button onClick={() => setStep('landing')} className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
               <span>←</span>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center text-white text-xs font-bold">FA</div>
-                <span className="font-semibold">FightAClaim</span>
+                <div className="w-6 h-6 bg-[#DC143C] rounded flex items-center justify-center text-base">✊</div>
+                <span className="font-semibold">Fight A Claim</span>
               </div>
             </button>
-            <div className="text-sm text-gray-500">Step 1 of 2 — Claim details</div>
+            <div className="text-sm text-gray-500">Step 1 of 2: Claim details</div>
           </div>
         </header>
 
@@ -405,7 +405,7 @@ export default function Home() {
                   <button
                     key={key}
                     onClick={() => setForm(f => ({ ...f, platform: key }))}
-                    className={`border-2 rounded-xl p-3 text-center transition-all ${form.platform === key ? 'border-indigo-500 bg-indigo-50 text-indigo-800' : 'border-gray-200 text-gray-700 hover:border-gray-300'}`}
+                    className={`border-2 rounded-xl p-3 text-center transition-all ${form.platform === key ? 'border-[#DC143C] bg-red-50 text-red-900' : 'border-gray-200 text-gray-700 hover:border-gray-300'}`}
                   >
                     <div className="font-bold">{p.label}</div>
                     <div className="text-xs opacity-70 mt-0.5">{p.sub}</div>
@@ -421,7 +421,7 @@ export default function Home() {
                   <button
                     key={key}
                     onClick={() => setForm(f => ({ ...f, claimType: key }))}
-                    className={`w-full text-left border-2 rounded-xl px-4 py-3 transition-all ${form.claimType === key ? 'border-indigo-500 bg-indigo-50 text-indigo-800 font-semibold' : 'border-gray-200 text-gray-700 hover:border-gray-300'}`}
+                    className={`w-full text-left border-2 rounded-xl px-4 py-3 transition-all ${form.claimType === key ? 'border-[#DC143C] bg-red-50 text-red-900 font-semibold' : 'border-gray-200 text-gray-700 hover:border-gray-300'}`}
                   >
                     {label}
                   </button>
@@ -438,7 +438,7 @@ export default function Home() {
                 placeholder="e.g. 112-3456789-0123456"
                 value={form.orderId}
                 onChange={e => setForm(f => ({ ...f, orderId: e.target.value }))}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
               />
             </div>
 
@@ -449,7 +449,7 @@ export default function Home() {
                 placeholder="e.g. Wireless Bluetooth Headphones"
                 value={form.itemName}
                 onChange={e => setForm(f => ({ ...f, itemName: e.target.value }))}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
               />
             </div>
 
@@ -463,7 +463,7 @@ export default function Home() {
                   placeholder="e.g. 1Z999AA10123456784"
                   value={form.trackingNumber}
                   onChange={e => setForm(f => ({ ...f, trackingNumber: e.target.value }))}
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
                 />
               </div>
             )}
@@ -477,7 +477,7 @@ export default function Home() {
                 placeholder="e.g. Item never arrived, tracking says delivered but I checked everywhere and nothing was here"
                 value={form.buyerMessage}
                 onChange={e => setForm(f => ({ ...f, buyerMessage: e.target.value }))}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DC143C] resize-none"
               />
             </div>
 
@@ -488,15 +488,15 @@ export default function Home() {
                 placeholder="you@example.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#DC143C] focus:border-transparent"
               />
             </div>
 
             <button
               onClick={() => setStep('payment')}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl text-lg shadow-lg shadow-indigo-200 transition-all hover:shadow-xl"
+              className="w-full bg-[#DC143C] hover:bg-[#b01030] text-white font-bold py-4 rounded-xl text-lg shadow-lg shadow-red-200 transition-all hover:shadow-xl"
             >
-              Continue to Payment — $19 →
+              Continue to Payment $19 →
             </button>
             <p className="text-center text-xs text-gray-400">Secure payment via Stripe · Documents ready in ~90 seconds</p>
           </div>
@@ -514,8 +514,8 @@ export default function Home() {
             <button onClick={() => setStep('form')} className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
               <span>←</span>
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center text-white text-xs font-bold">FA</div>
-                <span className="font-semibold">FightAClaim</span>
+                <div className="w-6 h-6 bg-[#DC143C] rounded flex items-center justify-center text-base">✊</div>
+                <span className="font-semibold">Fight A Claim</span>
               </div>
             </button>
             <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -532,7 +532,7 @@ export default function Home() {
               clientSecret,
               appearance: {
                 theme: 'stripe',
-                variables: { colorPrimary: '#4f46e5', borderRadius: '12px' },
+                variables: { colorPrimary: '#DC143C', borderRadius: '12px' },
               },
             }}
           >
@@ -545,7 +545,7 @@ export default function Home() {
           </Elements>
         ) : (
           <div className="flex items-center justify-center min-h-[60vh]">
-            <div className="w-8 h-8 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+            <div className="w-8 h-8 border-2 border-[#DC143C] border-t-transparent rounded-full animate-spin" />
           </div>
         )}
       </div>
@@ -558,15 +558,15 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="max-w-md w-full mx-auto px-6 text-center">
           <div className="bg-white rounded-2xl border border-gray-200 p-10 shadow-sm">
-            <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">FA</div>
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+              <div className="w-8 h-8 bg-[#DC143C] rounded-lg flex items-center justify-center text-white text-xl">✊</div>
             </div>
             <h2 className="text-xl font-bold text-gray-900 mb-2">Generating your documents</h2>
             <p className="text-gray-500 text-sm mb-8">Analyzing platform policies and drafting your response...</p>
             <div className="space-y-3 text-left">
               {PROCESSING_STEPS.map((s, i) => (
                 <div key={s} className={`flex items-center gap-3 text-sm transition-all duration-300 ${i < processingStep ? 'text-green-600' : i === processingStep ? 'text-gray-900' : 'text-gray-300'}`}>
-                  <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold ${i < processingStep ? 'bg-green-100 text-green-600' : i === processingStep ? 'bg-indigo-100 text-indigo-600 animate-pulse' : 'bg-gray-100 text-gray-300'}`}>
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold ${i < processingStep ? 'bg-green-100 text-green-600' : i === processingStep ? 'bg-red-100 text-[#DC143C] animate-pulse' : 'bg-gray-100 text-gray-300'}`}>
                     {i < processingStep ? '✓' : i === processingStep ? '⟳' : '○'}
                   </div>
                   {s}
@@ -598,7 +598,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => window.print()}
-                className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors"
+                className="bg-[#DC143C] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#b01030] transition-colors"
               >
                 Print / Save PDF
               </button>
@@ -620,13 +620,13 @@ export default function Home() {
           <div className="flex gap-2 mb-4">
             <button
               onClick={() => setActiveDoc('letter')}
-              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all ${activeDoc === 'letter' ? 'bg-white border-2 border-indigo-500 text-indigo-700 shadow-sm' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-300'}`}
+              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all ${activeDoc === 'letter' ? 'bg-white border-2 border-[#DC143C] text-[#DC143C] shadow-sm' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-300'}`}
             >
               Document 1: Dispute Response
             </button>
             <button
               onClick={() => setActiveDoc('checklist')}
-              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all ${activeDoc === 'checklist' ? 'bg-white border-2 border-indigo-500 text-indigo-700 shadow-sm' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-300'}`}
+              className={`px-5 py-2.5 rounded-xl font-semibold text-sm transition-all ${activeDoc === 'checklist' ? 'bg-white border-2 border-[#DC143C] text-[#DC143C] shadow-sm' : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-300'}`}
             >
               Document 2: Evidence Checklist
             </button>
@@ -654,7 +654,7 @@ export default function Home() {
                 <div className="space-y-3">
                   {result.checklist.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl">
-                      <input type="checkbox" className="mt-0.5 w-4 h-4 rounded text-indigo-600 flex-shrink-0" />
+                      <input type="checkbox" className="mt-0.5 w-4 h-4 rounded text-[#DC143C] flex-shrink-0" />
                       <span className="text-sm text-gray-800">{item}</span>
                     </div>
                   ))}
@@ -663,14 +663,14 @@ export default function Home() {
             )}
           </div>
 
-          <div className="mt-8 bg-indigo-50 border border-indigo-200 rounded-2xl p-6">
-            <h3 className="font-bold text-indigo-900 mb-3">What to do next</h3>
-            <ol className="space-y-2 text-sm text-indigo-800">
+          <div className="mt-8 bg-red-50 border border-red-200 rounded-2xl p-6">
+            <h3 className="font-bold text-red-900 mb-3">What to do next</h3>
+            <ol className="space-y-2 text-sm text-red-900">
               <li className="flex gap-2"><span className="font-bold flex-shrink-0">1.</span> Gather the evidence items from the checklist above</li>
               <li className="flex gap-2"><span className="font-bold flex-shrink-0">2.</span> Open {PLATFORMS[form.platform].label} Seller Central → Claims → locate this claim</li>
               <li className="flex gap-2"><span className="font-bold flex-shrink-0">3.</span> Paste the dispute response letter into the response field</li>
               <li className="flex gap-2"><span className="font-bold flex-shrink-0">4.</span> Attach evidence files (tracking screenshot first)</li>
-              <li className="flex gap-2"><span className="font-bold flex-shrink-0">5.</span> Submit and wait 48–72 hours for review</li>
+              <li className="flex gap-2"><span className="font-bold flex-shrink-0">5.</span> Submit and wait 48 to 72 hours for review</li>
             </ol>
           </div>
 
@@ -683,7 +683,7 @@ export default function Home() {
                 generateCalled.current = false
                 setForm({ platform: 'amazon', claimType: 'not_received', orderId: '', itemName: '', trackingNumber: '', buyerMessage: '' })
               }}
-              className="text-indigo-600 hover:text-indigo-800 text-sm font-medium"
+              className="text-[#DC143C] hover:text-[#b01030] text-sm font-medium"
             >
               ← Fight another claim
             </button>
@@ -691,7 +691,7 @@ export default function Home() {
         </main>
         <footer className="border-t border-gray-200 bg-white py-6 mt-8">
           <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-            <span>© {new Date().getFullYear()} FightAClaim · All rights reserved</span>
+            <span>© {new Date().getFullYear()} Fight A Claim · All rights reserved</span>
             <a href="mailto:support@fightaclaim.com" className="hover:text-gray-600 transition-colors">support@fightaclaim.com</a>
           </div>
         </footer>

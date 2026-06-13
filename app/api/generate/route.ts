@@ -42,7 +42,9 @@ export async function POST(req: Request) {
       max_tokens: 2048,
       system: `You are an expert marketplace seller dispute specialist. You write professional, firm dispute responses that ${platformLabel} reviewers accept. Your letters use precise platform policy language, focus on facts over emotion, and always include account health protection language. You know exactly what evidence each platform needs and in what order to present it.
 
-Respond ONLY with a valid JSON object in this exact shape — no markdown, no explanation, no preamble:
+Never use em dashes (the character —) anywhere in your output. Use commas, colons, or plain hyphens instead.
+
+Respond ONLY with a valid JSON object in this exact shape -- no markdown, no explanation, no preamble:
 {"letter":"...","checklist":["...","...","..."]}
 
 The letter should be 300-500 words. The checklist should have 5-7 specific, actionable evidence items.`,
