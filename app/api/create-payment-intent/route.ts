@@ -10,7 +10,7 @@ export async function POST(req: Request) {
       amount: 1900,
       currency: 'usd',
       receipt_email: email || undefined,
-      metadata: { product: 'getaiclaim' },
+      metadata: { product: 'fightaclaim' },
     })
 
     return NextResponse.json({ clientSecret: paymentIntent.client_secret })
