@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
@@ -36,9 +36,9 @@ const CLAIM_TYPES = {
 
 const HERO_WORDS = ['Amazon', 'eBay', 'Etsy']
 
-function ShieldIcon({ className }: { className?: string }) {
+function ShieldIcon({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg" fill="none">
+    <svg viewBox="0 0 24 24" className={className} style={style} xmlns="http://www.w3.org/2000/svg" fill="none">
       <path
         d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V6L12 2z"
         fill="currentColor"
@@ -304,7 +304,7 @@ export default function Home() {
     return (
       <div className="min-h-screen bg-white">
         {/* Nav */}
-        <header className="bg-[#0D1B2A] sticky top-0 z-10">
+        <header style={{ backgroundColor: '#0D1B2A' }} className="sticky top-0 z-10">
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <ShieldIcon className="w-7 h-7 text-white" />
@@ -322,13 +322,12 @@ export default function Home() {
         </header>
 
         {/* Hero */}
-        <section className="bg-[#0D1B2A] px-6 pt-24 pb-20 text-center">
+        <section style={{ backgroundColor: '#0D1B2A' }} className="px-6 pt-12 md:pt-24 pb-16 md:pb-20 text-center">
           <p className="text-[#53627A] text-xs font-semibold tracking-widest uppercase mb-8">
             PROTECT SELLERS. DEFEND EVERY CLAIM.
           </p>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-            Evidence-based defense<br />
-            for every{' '}
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+            Evidence-based defense for every{' '}
             <span className="relative inline-block text-[#FF5A3D]">
               {/* Invisible spacer holds the width of the longest word */}
               <span className="invisible" aria-hidden="true">Amazon</span>
@@ -357,14 +356,14 @@ export default function Home() {
         </section>
 
         {/* Platform trust strip */}
-        <section className="bg-[#1E2A3A] py-10 px-6">
+        <section style={{ backgroundColor: '#1E2A3A' }} className="py-10 px-6">
           <div className="max-w-3xl mx-auto">
-            <p className="text-[#53627A] text-xs font-semibold tracking-widest uppercase text-center mb-6">Supported platforms</p>
+            <p className="text-xs font-semibold tracking-widest uppercase text-center mb-6" style={{ color: '#53627A' }}>Supported platforms</p>
             <div className="grid grid-cols-3 gap-4">
               {(Object.entries(PLATFORMS) as [Platform, typeof PLATFORMS[Platform]][]).map(([key, p]) => (
-                <div key={key} className="border border-white/10 rounded-xl p-4 text-center">
+                <div key={key} className="rounded-xl p-4 text-center" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
                   <div className="font-bold text-white text-lg">{p.label}</div>
-                  <div className="text-xs text-[#53627A] mt-0.5">{p.sub}</div>
+                  <div className="text-xs mt-0.5" style={{ color: '#53627A' }}>{p.sub}</div>
                 </div>
               ))}
             </div>
@@ -420,22 +419,23 @@ export default function Home() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-[#FF5A3D] py-16 text-center">
+        <section style={{ backgroundColor: '#FF5A3D' }} className="py-16 text-center">
           <h2 className="text-3xl font-bold text-white mb-3">Ready to fight back?</h2>
-          <p className="text-white/80 mb-8 text-lg">It takes 2 minutes. Your documents are ready before the page reloads.</p>
+          <p className="mb-8 text-lg" style={{ color: 'rgba(255,255,255,0.8)' }}>It takes 2 minutes. Your documents are ready before the page reloads.</p>
           <button
             onClick={() => setStep('form')}
-            className="bg-white text-[#FF5A3D] font-bold text-lg px-10 py-4 rounded-xl hover:bg-orange-50 transition-colors shadow-lg"
+            className="bg-white font-bold text-lg px-10 py-4 rounded-xl hover:bg-orange-50 transition-colors shadow-lg"
+            style={{ color: '#FF5A3D' }}
           >
             Get My Defense Kit for $19
           </button>
         </section>
 
         {/* Footer */}
-        <footer className="bg-[#0D1B2A] py-8">
-          <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[#53627A]">
+        <footer style={{ backgroundColor: '#0D1B2A' }} className="py-8">
+          <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm" style={{ color: '#53627A' }}>
             <div className="flex items-center gap-2">
-              <ShieldIcon className="w-4 h-4 text-[#53627A]" />
+              <ShieldIcon className="w-4 h-4" style={{ color: '#53627A' } as React.CSSProperties} />
               <span>© {new Date().getFullYear()} Fight A Claim · All rights reserved</span>
             </div>
             <a href="mailto:support@fightaclaim.com" className="hover:text-white transition-colors">support@fightaclaim.com</a>
@@ -449,16 +449,16 @@ export default function Home() {
   if (step === 'form') {
     return (
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-[#0D1B2A]">
+        <header style={{ backgroundColor: '#0D1B2A' }}>
           <div className="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
             <button onClick={() => setStep('landing')} className="flex items-center gap-2 group">
-              <span className="text-[#53627A] group-hover:text-white transition-colors text-sm">←</span>
+              <span className="group-hover:text-white transition-colors text-sm" style={{ color: '#53627A' }}>←</span>
               <ShieldIcon className="w-5 h-5 text-white" />
               <span className="font-semibold text-white">
-                Fight <span className="text-[#FF5A3D]">A</span> Claim
+                Fight <span style={{ color: '#FF5A3D' }}>A</span> Claim
               </span>
             </button>
-            <div className="text-sm text-[#53627A]">Step 1 of 2: Claim details</div>
+            <div className="text-sm" style={{ color: '#53627A' }}>Step 1 of 2: Claim details</div>
           </div>
         </header>
 
@@ -633,16 +633,16 @@ export default function Home() {
   if (step === 'payment') {
     return (
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-[#0D1B2A]">
+        <header style={{ backgroundColor: '#0D1B2A' }}>
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <button onClick={() => setStep('form')} className="flex items-center gap-2 group">
-              <span className="text-[#53627A] group-hover:text-white transition-colors text-sm">←</span>
+              <span className="group-hover:text-white transition-colors text-sm" style={{ color: '#53627A' }}>←</span>
               <ShieldIcon className="w-5 h-5 text-white" />
               <span className="font-semibold text-white">
-                Fight <span className="text-[#FF5A3D]">A</span> Claim
+                Fight <span style={{ color: '#FF5A3D' }}>A</span> Claim
               </span>
             </button>
-            <div className="flex items-center gap-2 text-sm text-[#53627A]">
+            <div className="flex items-center gap-2 text-sm" style={{ color: '#53627A' }}>
               <span>🔒</span>
               <span>Secure checkout · Powered by Stripe</span>
             </div>
@@ -707,7 +707,7 @@ export default function Home() {
   if (step === 'result' && result) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <header className="bg-[#0D1B2A] sticky top-0 z-10">
+        <header style={{ backgroundColor: '#0D1B2A' }} className="sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</div>
@@ -716,7 +716,8 @@ export default function Home() {
             <div className="flex gap-2">
               <button
                 onClick={handleCopy}
-                className="border border-[#53627A] text-[#E6E9EE] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#1E2A3A] transition-colors"
+                className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                style={{ border: '1px solid #53627A', color: '#E6E9EE' }}
               >
                 {copied ? '✓ Copied!' : 'Copy text'}
               </button>
@@ -814,8 +815,8 @@ export default function Home() {
           </div>
         </main>
 
-        <footer className="bg-[#0D1B2A] py-6 mt-8">
-          <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[#53627A]">
+        <footer style={{ backgroundColor: '#0D1B2A' }} className="py-6 mt-8">
+          <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm" style={{ color: '#53627A' }}>
             <span>© {new Date().getFullYear()} Fight A Claim · All rights reserved</span>
             <a href="mailto:support@fightaclaim.com" className="hover:text-white transition-colors">support@fightaclaim.com</a>
           </div>
