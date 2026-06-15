@@ -160,7 +160,7 @@ function PaymentFormInner({ email, clientSecret, form, onSuccess }: PaymentFormP
               <ShieldIcon className="w-9 h-9 text-[#0D1B2A] flex-shrink-0" />
               <div>
                 <div className="font-semibold text-gray-900 text-sm">
-                  Fight <span className="text-[#FF5A3D]">A</span> Claim
+                  Fight <span>a</span> Claim
                 </div>
                 <div className="text-xs text-gray-500 mt-0.5">{platformLabel} · {claimLabel}</div>
                 {form.itemName && <div className="text-xs text-gray-400 mt-0.5 truncate max-w-[160px]">{form.itemName}</div>}
@@ -309,7 +309,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <ShieldIcon className="w-7 h-7 text-white" />
               <span className="font-bold text-white text-lg">
-                Fight <span className="text-[#FF5A3D]">A</span> Claim
+                Fight <span>a</span> Claim
               </span>
             </div>
             <button
@@ -455,7 +455,7 @@ export default function Home() {
               <span className="group-hover:text-white transition-colors text-sm" style={{ color: '#53627A' }}>←</span>
               <ShieldIcon className="w-5 h-5 text-white" />
               <span className="font-semibold text-white">
-                Fight <span style={{ color: '#FF5A3D' }}>A</span> Claim
+                Fight <span>a</span> Claim
               </span>
             </button>
             <div className="text-sm" style={{ color: '#53627A' }}>Step 1 of 2: Claim details</div>
@@ -639,7 +639,7 @@ export default function Home() {
               <span className="group-hover:text-white transition-colors text-sm" style={{ color: '#53627A' }}>←</span>
               <ShieldIcon className="w-5 h-5 text-white" />
               <span className="font-semibold text-white">
-                Fight <span style={{ color: '#FF5A3D' }}>A</span> Claim
+                Fight <span>a</span> Claim
               </span>
             </button>
             <div className="flex items-center gap-2 text-sm" style={{ color: '#53627A' }}>
